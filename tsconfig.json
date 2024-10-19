@@ -11,12 +11,19 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@core/*": [
+        "src/core/*"
+      ],
+        "@modules/*": [
+            "src/modules/*"
+        ],
+    }
   }
 }
