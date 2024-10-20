@@ -3,7 +3,7 @@ import { Nullable } from '@core/domain/types/nullable'
 
 interface DocumentTypeEssentials {
   readonly name: string
-  readonly status: boolean
+  readonly state: boolean
   readonly id: DocumentTypeId
 }
 

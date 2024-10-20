@@ -12,7 +12,7 @@ export class DocumentType {
   private code: Nullable<string>
   private description: Nullable<string>
   private readonly createdAt: Nullable<Date>
-  private status: boolean
+  private state: boolean
 
   private constructor(props: DocumentTypeProperties) {
     Object.assign(this, props)
@@ -25,7 +25,7 @@ export class DocumentType {
       code: this.code,
       description: this.description,
       createdAt: this.createdAt,
-      status: this.status,
+      state: this.state,
     }
   }
 
@@ -36,7 +36,7 @@ export class DocumentType {
       code: this.code,
       description: this.description,
       createdAt: this.createdAt,
-      status: this.status,
+      state: this.state,
     }
   }
 
@@ -47,7 +47,7 @@ export class DocumentType {
       code: props.code,
       description: props.description,
       createdAt: props.createdAt,
-      status: props.status,
+      state: props.state,
     })
   }
 
@@ -62,7 +62,7 @@ export class DocumentType {
       code,
       description,
       createdAt: new Date(),
-      status: true,
+      state: true,
     })
   }
 
@@ -71,10 +71,10 @@ export class DocumentType {
   }
 
   delete(): void {
-    this.status = false
+    this.state = false
   }
 
   restore(): void {
-    this.status = true
+    this.state = true
   }
 }

@@ -1,10 +1,11 @@
 import validate from 'uuid-validate'
+import { InvalidArgumentException } from '@core/domain/exceptions/invalid-argument.exception'
 
 export class Uuid {
   private readonly value: string
 
   constructor(value: string) {
-    this.ensureIsValidUuid(value)
+    //this.ensureIsValidUuid(value)
     this.value = value
   }
 
@@ -14,7 +15,7 @@ export class Uuid {
 
   private ensureIsValidUuid(value: string): void {
     if (!validate(value)) {
-      throw new Error('Invalid UUID')
+      throw new InvalidArgumentException(`Invalid UUID: ${value}`)
     }
   }
 
